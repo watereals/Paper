@@ -45,7 +45,7 @@ def down_task(url):
 if __name__ == "__main__":
 	urlHeader = "http://scholar.google.com"
 	b = "/scholar?start="
-	d = "&q=link+prediction&hl=zh-CN&as_sdt=0,5"
+	d = "&q=computer+science&hl=zh-CN&as_sdt=0,5"
 	for i in range(0, 100, 10):
 		url = urlHeader+b+str(i)+d
 		down_task(url)

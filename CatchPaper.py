@@ -35,8 +35,8 @@ def down_task(url):
 	for item in soup.find_all('div', {'class':'gs_r'}):		# find all paper title
 		contents = item.contents;
 		if(len(contents)==2):
-			paperTitle= c1(item.contents[1])
-			pdfLink = c0(item.contents[0])
+			paperTitle= c1(item.contents[1])				# parse the title
+			pdfLink = c0(item.contents[0])					# parse the link for pdf file
 			down_file(pdfLink, "E:/Papers/", paperTitle.replace(":","_")+".pdf")
 		else:
 			paperTitle = c1(item.contents[0])

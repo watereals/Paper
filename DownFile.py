@@ -19,13 +19,14 @@ def down_file(url, dir=None, file_name=None):
     
     try:
         webFile = urllib2.urlopen(url, None, 10)  # url, data(want to send to server) and timeout
-    except urllib2.URLError as e:
+    except urllib2.URLError as e:					# except 
         print("Download failed: %s" % e)
         return False
     
     out = open(saveName, 'wb')
     httpInfo = webFile.info()                   # get http header infomation
     print("Size of requested file: %s%s" % (haokan(int(httpInfo.getheaders("Content-Length")[0]))))
+	# read the response and write to file
     while True:
         buffer = webFile.read(8192)
         if not buffer:
